@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<meta charset="UTF-8">
+  	<title>Color Wheel Complementary</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+</head>
+<body>
+    <div class="wrap">
+      	<div class="half">
+        	<div class="colorPicker"></div>
+      	</div>
+      	<div class="half">
+	        <span>Active Color:</span>
+	        <div id="activeColor"></div>
+	        <span>Complementary Colors:</span>
+	        <ul id="colorList">
+	        	<script type="text/javascript">
+	        		colorPicker.on(["mount", "color:change"], function(){
+
+					colorPicker.setActiveColor(0);
+					datahex = colorPicker.colors[0].hexString;
+					  if (datahex.indexOf('#') === 0) {
+					        datahex = datahex.slice(1);
+					    }
+
+					  var r = red   = (parseInt(datahex.slice(0, 2), 16)),
+					      g = green = (parseInt(datahex.slice(2, 4), 16)),
+					      b = blue  = (parseInt(datahex.slice(4, 6), 16));
+
+					  r /= 255;
+					  g /= 255;
+					  b /= 255;
+					  const l = Math.max(r, g, b);
+					  const s = l - Math.min(r, g, b);
+					  const h = s
+					    ? l === r
+					      ? (g - b) / s
+					      : l === g
+					      ? 2 + (b - r) / s
+					      : 4 + (r - g) / s
+					    : 0;
+					  const hue0 = Math.round(60 * h < 0 ? 60 * h + 360 : 60 * h);
+					  const sat0 = Math.round(100 * (s ? (l <= 0.5 ? s / (2 * l - s) : s / (2 - (2 * l - s))) : 0));
+					  const lig0 = Math.round((100 * (2 * l - s)) / 2);
+					  const dComp0 = (hue0 + 180) % 360;
+					  
+					  colorList.innerHTML = '';
+					    colorPicker.colors[0].hsl = { h: hue0, s: sat0, l: lig0 };
+					    const colString0 = colorPicker.colors[0].hexString;
+					    colorPicker.colors[1].hsl = { h: dComp0, s: sat0, l: lig0 };
+					    const colString1 = colorPicker.colors[1].hexString;
+					    colorList.innerHTML += `
+					      <li onClick="setColor(0)">
+					        <div class="swatch" style="background: ${ colString0 }"></div>
+					        <span>0: ${ colString0 }</span>
+					      </li>     
+					      <li onClick="setColor(1)">
+					        <div class="swatch" style="background: ${ colString1 }"></div>
+					        <span>1: ${ colString1 }</span>
+					      </li>
+					    `;
+						});
+	        	</script>
+	        </ul>
+    	</div>
+    </div>
+</body>
+	<script src='https://cdn.jsdelivr.net/npm/@jaames/iro@beta/dist/iro.min.js'></script>
+	<script src="js/complementary.js"></script>
+</html>

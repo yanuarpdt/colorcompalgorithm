@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<meta charset="UTF-8">
+  	<title>Color Wheel Analagous</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/colorpicker.css">
+</head>
+<body id="warna" style="">
+	<div class="wrapper">
+      <input type="checkbox" id="btn" hidden>
+      <label for="btn" class="menu-btn">
+        <i class="fas fa-bars"></i>
+        <i class="fas fa-times"></i>
+      </label>
+      <nav id="sidebar">
+        <div class="title">Analogous</div>
+        <ul class="list-items">
+          <li><a href="index.html"><i class="home_ico"></i>Home</a></li>
+          <li><a href="complementary.html"><i class="complementary_ico"></i>Complementary</a></li>
+          <li><a href="#"><i class="analogous_ico"></i>Analogous</a></li>
+          <li><a href="triadic.html"><i class="triadic_ico"></i>Triadic</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="wrap">
+    	<h1>Analogous Color Wheel</h1>
+      	<div class="half">
+        	<center><div class="colorPicker"></div></center>
+      	</div>
+      	<div class="half">
+	        <span>Active Color:</span>
+	        <div id="activeColor"></div>
+	        <span>Analagous Colors:</span>
+	        <ul id="colorList"></ul>
+    	</div>
+    </div>
+
+    <a href="information.html" class="float"><img src="images/question_ico.png" style="padding-top: 25%;"></a>
+</body>
+	<script src='https://cdn.jsdelivr.net/npm/@jaames/iro@beta/dist/iro.min.js'></script>
+	<script src="js/analogous.js"></script>
+</html>
