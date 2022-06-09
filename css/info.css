@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+
+h2 {
+  padding-top: 5px;
+}
+
+.coleft {
+  background-color: ghostwhite;
+    border-right: solid white;
+      border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+}
+
+.comid {
+  background-color: ghostwhite;
+}
+
+.coright {
+  background-color: ghostwhite;
+    border-left: solid white;
+      border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+}
+
+.c_info{
+  position: block;
+      padding-left: 10%;
+        padding-right: 10%;
+          color: #202020;
+            width: 70;
+              text-align: center;
+}
+
+.c_info .inheader{
+  font-size: 50px;
+    font-weight: 700;
+}
+
+.column {
+  float: left;
+    width: 33.33%;
+      padding: 10px;
+        height: 570px;
+}
+
+.row:after {
+  content: "";
+    display: table;
+      clear: both;
+}
+
+.compleimg {
+  content: url(../images/complementary-colors.webp);
+    width: 80%;
+      padding-bottom: 5px;
+}
+
+.analogimg {
+  content: url(../images/analogous-colors.webp);
+    width: 80%;
+      padding-bottom: 5px;
+}
+
+.triadimg {
+  content: url(../images/triadic-colors.webp);
+    width: 80%;
+      padding-bottom: 5px;
+}
+
+.formula {
+  font-family: consolas;
+    font-size: 20px;
+      color: #555555;
+}
