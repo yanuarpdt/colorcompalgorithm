@@ -5,7 +5,9 @@ const colorPicker = new iro.ColorPicker(".colorPicker", {
       component: iro.ui.Wheel,
       options: {
         borderColor: '#ffffff',
-        wheelAngle: 90
+        wheelAngle: 90,
+        handleRadius: 10,
+        borderWidth: 5,
       }
     },
   ],
@@ -14,12 +16,9 @@ const colorPicker = new iro.ColorPicker(".colorPicker", {
     "rgb(255,0,0)",
     "rgb(0,255,255)",
   ],
-  handleRadius: 10,
-  borderWidth: 5,
 });
 
 const colorList = document.getElementById("colorList");
-const colorDark = document.getElementById("colorDark");
 const activeColor = document.getElementById("activeColor");
 
 colorPicker.on(["mount", "color:change"], function(){
@@ -67,11 +66,6 @@ colorPicker.on(["mount", "color:change"], function(){
                 </li>
               `;
             });
-
-function ambilWarna(){
-  document.getElementById("demo1").style.color = colString0;
-  document.getElementById("demo2").style.color = colString1;
-}
 
 colorPicker.on(["mount", "color:change"], function(){
   // colorPicker.color is always the active color
