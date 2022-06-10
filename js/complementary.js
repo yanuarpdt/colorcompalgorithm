@@ -68,7 +68,6 @@ colorPicker.on(["mount", "color:change"], function(){
             });
 
 colorPicker.on(["mount", "color:change"], function(){
-  // colorPicker.color is always the active color
   document.body.style.backgroundColor = colorPicker.colors[0].hexString;
   const index = colorPicker.colors[0].index;
   const colString = colorPicker.colors[0].hexString;
