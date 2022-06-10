@@ -5,7 +5,9 @@ const colorPicker = new iro.ColorPicker(".colorPicker", {
       component: iro.ui.Wheel,
       options: {
         borderColor: '#ffffff',
-        wheelAngle: 90
+        wheelAngle: 90,
+        handleRadius: 10,
+        borderWidth: 5,
       }
     },
   ],
@@ -15,8 +17,6 @@ const colorPicker = new iro.ColorPicker(".colorPicker", {
     "hsl(30, 100%, 50%)",
     "hsl(330, 100%, 50%)",
   ],
-  handleRadius: 10,
-  borderWidth: 5,
 });
 
 const colorList = document.getElementById("colorList");
@@ -76,7 +76,6 @@ colorPicker.on(["mount", "color:change"], function(){
             });
 
 colorPicker.on(["mount", "color:setActive", "color:change"], function(){
-  // colorPicker.color is always the active color
   document.body.style.backgroundColor = colorPicker.colors[0].hexString;
   const index = colorPicker.colors[0].index;
   const colString = colorPicker.colors[0].hexString;
